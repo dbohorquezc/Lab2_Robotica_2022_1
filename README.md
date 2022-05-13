@@ -24,10 +24,31 @@ Por medio de un calibrador se obtienes la medidas con las cuales se realiza un d
   <img align="center"; width="200" height="300" src="Fig/Marcos.jpg">
 </p>
 
-Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita ecidecira la orientacion de cada articulacion y sus respectivos eslabones. 
+### Análisis
+Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita evidenciar la orientación de cada articulación y sus respectivos eslabones. 
 <p align="center">
   <img align="center"; width="500" height="300" src="Fig/TablaDH.png">
 </p>
 <p align="center">
   <img align="center"; width="500" height="300" src="Fig/Robot.jpg">
 </p>
+
+### ROS
+### Toolbox
+Como se mostro en el análsis la tabla obtenida se obtuvo por medio de la función SerialLink generando así el siguiente código.
+
+```
+q_deg=[0 0 0 0];
+q_rad=q_deg*(pi/180);
+l=[4.4,10.5,10.5 9];
+L(1) = Link('revolute','alpha',pi/2,'a',0,'d',l(1),'offset',0);
+L(2) = Link('revolute','alpha',0,'a',l(2),'d',0,'offset',pi/2);
+L(3) = Link('revolute','alpha',0,'a',l(3),'d',0,'offset',0);
+L(4) = Link('revolute','alpha',0,'a',0,'d',0,'offset',0);
+
+PhantomX=SerialLink(L,'name','PX');
+PhantomX.tool=[0 0 1 l(4);-1 0 0 0;0 -1 0 0;0 0 0 1];
+figure
+PhantomX.plot(q_deg,'notiles','noname','floorlevel',-1);
+``` 
+En primer lugar se crea dos variables que contengan un arreglo, en este caso la primera es la posición objetivo en radianes que para iniciar se pone en HOME y la segunda contiene los valores de las articulaciones mostradas al inicio. Con esto realizado añaden los parametros de DH hallados previamente y con esto se crea el robot teniendo en cuenta que se configura una herramienta por medio del método .tool y su respectiva MTH. Por último como método de comprobación se grafica el robot en diferentes posiciones:
