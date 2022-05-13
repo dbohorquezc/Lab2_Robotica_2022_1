@@ -86,7 +86,7 @@ def jointCommand(command, id_num, addr_name, value, time):
     except rospy.ServiceException as exc:
         print(str(exc))
 ```
-La siguientes lineas de codigo son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. Por medio de un while(), se ejecuta la accion indefinida mente hasta que se termine el proceso con la tecla 'ESC', en este ciclo la idea es brindar las funciones a las teclas 'w', 'a', 's' y 'd'; para esto, se crea una variable i la cual representa la articulacion actual, esta siempre inicializando en uno (*"waist"*), a continacuacion se explicara el proceso de cambiar de junta: por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así pasando en la siguiente articulacion, cuando se supera el valor de 4, i vuelve a tomar el valor de 1; por el contrario, por medio de un if, cuando se presiona 's' se le restará uno a la variable i, y así pasando a la articulacion previa, cuando se esta por debajo del valor de 1, i vuelve toma el valor de 4. Para retornar a la posicion de Home, se pulsa la tecla 'a', que posteriormente por medio de la funcion jointCommand, resive la articulacion actual, y el valor 512, preestablecido por defecto para todas las articulaciones como Home. 
+La siguientes lineas de codigo son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. Por medio de un while(), se ejecuta la accion indefinida mente hasta que se termine el proceso con la tecla 'ESC', en este ciclo la idea es brindar las funciones a las teclas 'w', 'a', 's' y 'd'; para esto, se crea una variable i la cual representa la articulacion actual, esta siempre inicializando en uno (*"waist"*), a continacuacion se explicara el proceso de cambiar de junta: por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así pasando en la siguiente articulacion, cuando se supera el valor de 4, i vuelve a tomar el valor de 1; por el contrario, por medio de un if, cuando se presiona 's' se le restará uno a la variable i, y así pasando a la articulacion previa, cuando se esta por debajo del valor de 1, i vuelve toma el valor de 4. Para retornar a la posicion de Home, se pulsa la tecla 'a', que posteriormente por medio de la funcion jointCommand, resive la articulacion actual, y el valor 512, preestablecido por defecto para todas las articulaciones como Home. Finalmente con la tecla 'd', se coloan 4 casos posibles usando la sentencia if - Elif, que busca tener como objetivo evaluar en que tecla se esta y verificar el Objetivo independiente que le opertenece a dicha junta, que finalmente será movida con la funcion jointCommand.
 
 ```
 if __name__ == '__main__':
@@ -127,9 +127,8 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         pass
 ```
-
-[parte 1](https://www.youtube.com/watch?v=S8tb4s8Rve8)
-[parte 2](https://www.youtube.com/watch?v=MQF8JFIcQtE)
+A continuacion se presentan los videos evidencia de ejecuacion con el robot y la visualizzacion en RViz, [video parte 1](https://www.youtube.com/watch?v=S8tb4s8Rve8)
+[video parte 2](https://www.youtube.com/watch?v=MQF8JFIcQtE).
 ### Toolbox
 Como se mostro en el análsis la tabla obtenida se obtuvo por medio de la función SerialLink generando así el siguiente código.
 
@@ -220,6 +219,10 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   <img align="center"; width="300" src="n90_45_n55_45.jpg">
   
 </p>
-Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en la siguiente [página](https://www.youtube.com/watch?v=xyX3RvM0UJ0)
+Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente [Link](https://www.youtube.com/watch?v=xyX3RvM0UJ0)
 
+### Conclusiones
 
+* Se concluye que se tuvo un acercamiento optimo a realizar acciones de movimiento basicas (en posicion, establesiendo torques limites), agregando una HMI que en este caso es un PC desde la interfaz de VS en Ubuntu.
+* Tanto en MATLAB como en Python se pudo completar las espesicicaciones de la guia y tener un cumplimiento de lo que se espesificaba, se tienen los videos como evidencia del correcto movimiento de lo los robots *Phantom X Pincher*.
+* Habiendo tenido este acercamiento, queda accesible la posibilidad de planear trayectorias, a las que se piensa como aporte cómo agregar  perfiles de velocidad espesicos para cuidar la integridad del robor.
