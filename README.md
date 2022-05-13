@@ -18,7 +18,7 @@ Robótica</p1>
 ## Metodología
 
 ### Mediciones
-Por medio de un calibrador se realiza un diagrama para tener una idea de las juntas que presenta el robot.
-p align="center">
-  <img align="center"; width="100" height="100" src="Fig/Escudo_UN.png">
-</p>
+Por medio de un calibrador se obtienes la medidas con las cuales se realiza un diagrama para tener una idea basica de las juntas que presenta el robot.
+<p align="center">
+  <img align="center"; width="200" height="300" src="Fig/Diagram.jpg">
+Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama y su respectiva tabla. 
