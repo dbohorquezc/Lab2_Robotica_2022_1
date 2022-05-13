@@ -219,7 +219,8 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   <img align="center"; width="300" src="n90_45_n55_45.jpg">
   
 </p>
-Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente [Link](https://www.youtube.com/watch?v=xyX3RvM0UJ0)
+Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente 
+[Link](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
 
 ### Conclusiones
 
