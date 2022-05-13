@@ -67,3 +67,23 @@ Para esta sección se tiene como objetivo realizar un código que permita public
 ```
 round(mapfun(q_deg(),-150,150,0,1023))
 ```
+Como se evidencia se tiene los valores limites en grados y en bits junto con una entrada en grados que seria el objetivo a donde se quiere mover la junta, el round se utiliza para aproximar al entero mas cercano dado que este es el tipo de dato que solicita el tópico.
+Con esto hecho se procede a realiza el codigo de publicación:
+```
+%%
+clc
+clear
+rosshutdown
+rosinit;
+%%
+motorSvcClient = rossvcclient('/dynamixel_workbench/dynamixel_command');
+motorCommandMsg= rosmessage(motorSvcClient);
+```
+En primera intancia se inicia en una terminal externa el nodo maestro con el comando "roscore", previo a esto se siguen los pasos utilizados para la conexión del robot en ROS y python, teniendo cuidado de que el launch que permite controlar las juntas tenga un funcionamiento adecuando ya que este es el que permite publicar las posiciones requeridas en cada motor.COmo buena práctica se limpia la consola y la variables del workbench asi mismo se corta el nodo de matlab con ros si es el caso de que existiera y por último se crea de nuevo el nodo mencionado. Al igual que en el laboratorio 1para la publicación se crea un cliente que puede acceder al comando y un mensaje que en este caso es la posición.
+```
+motorCommandMsg.AddrName="Goal_Position";
+motorCommandMsg.Id=i;
+motorCommandMsg.Value=round(mapfun(q_deg(i),-150,150,0,1023));%bits
+call(motorSvcClient,motorCommandMsg);
+```
+Creado el mensaje se verifican lo parámetros que solicita el tópico, que en este caso es el servicio, el ID del motor y el valor que como se mencionó previamente se postuló según los límites de los motores.Así mismo como es importante indicar posiciones tambien lo es poder leerla sin necesidad de modificarlas
