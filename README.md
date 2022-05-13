@@ -10,7 +10,7 @@ Robótica</p1>
 <p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Universidad Nacional de Colombia Sede Bogotá</p>
 <br>
 <p align="center">
-  <img align="center"; width="100" height="100" src="Fig/Escudo_UN.png">
+  <img align="center"; width="100"  src="Fig/Escudo_UN.png">
 </p>
 
 <p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> <br>13 de mayo de 2022</p>
@@ -86,7 +86,7 @@ def jointCommand(command, id_num, addr_name, value, time):
     except rospy.ServiceException as exc:
         print(str(exc))
 ```
-La siguientes lineas de codigo son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. por medio de un while(1), se ejecuta la accion indefinida mente hasta que se termine el proceso con la tecla 'b'.acá  se crea una variable i la cual representa la articulacion actual y siempre inicializa en uno, siendo *"waist"*,
+La siguientes lineas de codigo son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. Por medio de un while(), se ejecuta la accion indefinida mente hasta que se termine el proceso con la tecla 'ESC', en este ciclo la idea es brindar las funciones a las teclas 'w', 'a', 's' y 'd'; para esto, se crea una variable i la cual representa la articulacion actual, esta siempre inicializando en uno (*"waist"*), a continacuacion se explicara el proceso de cambiar de junta: por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así pasando en la siguiente articulacion, cuando se supera el valor de 4, i vuelve a tomar el valor de 1; por el contrario, por medio de un if, cuando se presiona 's' se le restará uno a la variable i, y así pasando a la articulacion previa, cuando se esta por debajo del valor de 1, i vuelve toma el valor de 4. Para retornar a la posicion de Home, se pulsa la tecla 'a', que posteriormente por medio de la funcion jointCommand, resive la articulacion actual, y el valor 512, preestablecido por defecto para todas las articulaciones como Home. 
 
 ```
 if __name__ == '__main__':
