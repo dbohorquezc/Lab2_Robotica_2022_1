@@ -124,3 +124,4 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   <img align="center"; width="300" height="300" src="n90_45_n55_45.jpg">
   
 </p>
+Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente.
