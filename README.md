@@ -220,7 +220,8 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   
 </p>
 Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente 
-[Link](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
+[video](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
+
 
 ### Conclusiones
 
