@@ -91,7 +91,7 @@ Las siguientes líneas de código son las que permiten entrelazar el mando por t
 
 En este ciclo la idea principal es brindar las funciones a las teclas 'w', 'a', 's' y 'd', y para esto, se realiza una variable i la cual representa la articulación actual, la cual siempre inicializa en uno ("waist"), a continuación, se explicara el proceso de cambiar de junta: 
 
-*Por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así se pasa a la siguiente articulación, cuando se supera el valor de 4, i vuelve a tomar el valor de 1.
+* Por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así se pasa a la siguiente articulación, cuando se supera el valor de 4, i vuelve a tomar el valor de 1.
 * Por el contrario, por medio de un if, cuando se presiona 's' se le restará uno a la variable i, y así pasando a la articulación previa. cuando se está por debajo del valor de 1, i toma el valor de 4. 
 * Para retornar a la posición de Home, se pulsa la tecla 'a', que posteriormente por medio de la función jointCommand, recibe la articulación actual, y el valor 512, preestablecido por defecto para todas las articulaciones como Home.
 * Finalmente con la tecla 'd', se colocan 4 casos posibles usando la sentencia if - Elif, que busca tener como objetivo evaluar en que tecla en la que se está, y verificar el Objetivo independiente que le pertenece a dicha junta, que finalmente será movida con la función jointCommand.
