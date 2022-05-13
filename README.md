@@ -18,7 +18,7 @@ Robótica</p1>
 ## Metodología
 
 ### Mediciones
-Por medio de un calibrador se obtienes la medidas con las cuales se realiza un diagrama para tener una idea basica de las juntas que presenta el robot (Imagen de la izquierda). Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama (Diagrama de la derecha) y su respectiva tabla.
+Por medio de un calibrador se obtienes las medidas con las cuales se realiza un diagrama para tener una idea básica de las juntas que presenta el robot (Imagen de la izquierda). Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama (Diagrama de la derecha) y su respectiva tabla.
 <p align="center">
   <img align="center"; width="180"  src="Fig/Diagram.jpg">
   <img align="center"; width="200"  src="Fig/Marcos.jpg">
@@ -26,7 +26,7 @@ Por medio de un calibrador se obtienes la medidas con las cuales se realiza un d
 <p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 1.</p>
 
 ### Análisis
-Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita evidenciar la orientación de cada articulación y sus respectivos eslabones. 
+Obteniendo así la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita evidenciar la orientación de cada articulación y sus respectivos eslabones.
 <p align="center">
   <img align="center"; width="500"  src="Fig/TablaDH.png">
 </p>
@@ -36,15 +36,15 @@ Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por
 
 ### ROS
 
-Para este punto,  se partio de realizar movimientos al robot por la consola para tener un primer acercamiento con el comportamiento de robot, y posteriormente si se procedio a ver controlar su movimiento desde un  Script de Python y RViz.Cabe mencionar que para todos estros procesos es necesario chequear y habilitar el puerto que se haya activado al conectar el robot, esto se realiza con:
+Para este punto, se empezó por realizar movimientos al robot desde la consola con el fin de tener un primer acercamiento con el comportamiento de robot; posteriormente se procedió a controlar su movimiento desde un Script de Python y viendo su versión digital en RViz. Cabe mencionar que para todos estos procesos es necesario chequear y habilitar el puerto que se haya activado al conectar el robot, esto se realiza con:
 ```
 ls /dev/tty*
 sudo chmod 777 /dev/ttyUSB0
 ```
 
-A continuacion se explicará el codigo de python.
+A continuación, se explicará el código de Python.
 
-Se importaron las librerias 
+Se importaron las librerías.
 ```
 #!/usr/bin/env python3
 import rospy
@@ -55,7 +55,7 @@ import termios, sys, os
 from dynamixel_workbench_msgs.srv import DynamixelCommand
 ```
 
-Se define la funcion getkey, que permitte interactuar con el teclado dentro de la terminal de VScode donde se haya ejecutado el archivo.
+Se define la función getkey, que permite interactuar con el teclado dentro de la terminal de VScode.
 ```
 def getkey():
     fd = sys.stdin.fileno()
@@ -72,7 +72,7 @@ def getkey():
         termios.tcsetattr(fd, TERMIOS.TCSAFLUSH, old)
     return c
 ```
-Se define la funcion jointCommand, la cual incializa un nodo, y se crea la funcion para que permirta interactuar con los servicion de dynamixel, de forma que se entrega el comando, el ID de la articulacion, el addr_name, que tiene que ver con la accion que se va a realizar, el valor a cambiar o objetivo y el tiempo.
+Se define la función jointCommand, la cual inicializa un nodo, y se crea la interacción con los servicios de Dynamixel, de forma que se entrega el ID de la articulación, el addr_name, que es la acción que se va a realizar, el valor a cambiar u objetivo, y el tiempo. La variable command se deja como un string en blanco.
 
 ```
 def jointCommand(command, id_num, addr_name, value, time):
@@ -87,7 +87,15 @@ def jointCommand(command, id_num, addr_name, value, time):
     except rospy.ServiceException as exc:
         print(str(exc))
 ```
-La siguientes lineas de codigo son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. Por medio de un while(), se ejecuta la accion indefinida mente hasta que se termine el proceso con la tecla 'ESC', en este ciclo la idea es brindar las funciones a las teclas 'w', 'a', 's' y 'd'; para esto, se crea una variable i la cual representa la articulacion actual, esta siempre inicializando en uno (*"waist"*), a continacuacion se explicara el proceso de cambiar de junta: por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así pasando en la siguiente articulacion, cuando se supera el valor de 4, i vuelve a tomar el valor de 1; por el contrario, por medio de un if, cuando se presiona 's' se le restará uno a la variable i, y así pasando a la articulacion previa, cuando se esta por debajo del valor de 1, i vuelve toma el valor de 4. Para retornar a la posicion de Home, se pulsa la tecla 'a', que posteriormente por medio de la funcion jointCommand, resive la articulacion actual, y el valor 512, preestablecido por defecto para todas las articulaciones como Home. Finalmente con la tecla 'd', se coloan 4 casos posibles usando la sentencia if - Elif, que busca tener como objetivo evaluar en que tecla se esta y verificar el Objetivo independiente que le opertenece a dicha junta, que finalmente será movida con la funcion jointCommand.
+Las siguientes líneas de código son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. Por medio de un while(), se ejecuta la acción indefinida mente hasta que se termine el proceso con la tecla 'ESC'. 
+
+En este ciclo la idea principal es brindar las funciones a las teclas 'w', 'a', 's' y 'd', y para esto, se realiza una variable i la cual representa la articulación actual, la cual siempre inicializa en uno ("waist"), a continuación, se explicara el proceso de cambiar de junta: 
+
+*Por medio de un if, cuando se presiona 'w' se le sumará uno a la variable i, y así se pasa a la siguiente articulación, cuando se supera el valor de 4, i vuelve a tomar el valor de 1.
+* Por el contrario, por medio de un if, cuando se presiona 's' se le restará uno a la variable i, y así pasando a la articulación previa. cuando se está por debajo del valor de 1, i toma el valor de 4. 
+* Para retornar a la posición de Home, se pulsa la tecla 'a', que posteriormente por medio de la función jointCommand, recibe la articulación actual, y el valor 512, preestablecido por defecto para todas las articulaciones como Home.
+* Finalmente con la tecla 'd', se colocan 4 casos posibles usando la sentencia if - Elif, que busca tener como objetivo evaluar en que tecla en la que se está, y verificar el Objetivo independiente que le pertenece a dicha junta, que finalmente será movida con la función jointCommand.
+
 
 ```
 if __name__ == '__main__':
