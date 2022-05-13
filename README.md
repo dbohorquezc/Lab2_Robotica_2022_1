@@ -22,8 +22,8 @@ Por medio de un calibrador se obtienes la medidas con las cuales se realiza un d
 <p align="center">
   <img align="center"; width="180"  src="Fig/Diagram.jpg">
   <img align="center"; width="200"  src="Fig/Marcos.jpg">
-  Figura 1.
 </p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 1.</p>
 
 ### Análisis
 Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita evidenciar la orientación de cada articulación y sus respectivos eslabones. 
