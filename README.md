@@ -228,11 +228,11 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   <img align="center"; width="300" src="n90_45_n55_45.jpg">
   
 </p>
-Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente [video](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
+Se puede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente [video](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
 
 
 ### Conclusiones
 
-* Se concluye que se tuvo un acercamiento optimo a realizar acciones de movimiento basicas (en posicion, establesiendo torques limites), agregando una HMI que en este caso es un PC desde la interfaz de VS en Ubuntu.
-* Tanto en MATLAB como en Python se pudo completar las espesicicaciones de la guia y tener un cumplimiento de lo que se espesificaba, se tienen los videos como evidencia del correcto movimiento de lo los robots *Phantom X Pincher*.
-* Habiendo tenido este acercamiento, queda accesible la posibilidad de planear trayectorias, a las que se piensa como aporte cómo agregar  perfiles de velocidad espesicos para cuidar la integridad del robor.
+* Se concluye que se tuvo un acercamiento optimo para realizar acciones de movimiento básicas en posición y estableciendo torques limites, agregando una HMI que en este caso es un PC desde la interfaz de VS en Ubuntu.
+* Tanto en MATLAB como en Python se pudo completar las especificaciones de la guía y tener un cumplimiento de lo que se especificaba, se tienen los videos como evidencia del correcto movimiento de lo los robots  *Phantom X Pincher*.
+* Habiendo tenido este acercamiento, queda accesible la posibilidad de planear trayectorias, a las que se piensa como aporte cómo agregar perfiles de velocidad espesitos para cuidar la integridad del robot.
