@@ -21,4 +21,13 @@ Robótica</p1>
 Por medio de un calibrador se obtienes la medidas con las cuales se realiza un diagrama para tener una idea basica de las juntas que presenta el robot.
 <p align="center">
   <img align="center"; width="200" height="300" src="Fig/Diagram.jpg">
+</p>
+
 Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama y su respectiva tabla. 
+<p align="center">
+  <img align="center"; width="200" height="300" src="Fig/Marcos.jpg">
+</p>
+Obteniendo asi la siguiente tabla:
+<p align="center">
+  <img align="center"; width="200" height="300" src="Fig/TablaDH">
+</p>
