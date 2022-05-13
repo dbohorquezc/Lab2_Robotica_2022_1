@@ -20,17 +20,17 @@ Robótica</p1>
 ### Mediciones
 Por medio de un calibrador se obtienes la medidas con las cuales se realiza un diagrama para tener una idea basica de las juntas que presenta el robot (Imagen de la izquierda). Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama (Diagrama de la derecha) y su respectiva tabla.
 <p align="center">
-  <img align="center"; width="200" height="300" src="Fig/Diagram.jpg">
-  <img align="center"; width="200" height="300" src="Fig/Marcos.jpg">
+  <img align="center"; width="200"  src="Fig/Diagram.jpg">
+  <img align="center"; width="200"  src="Fig/Marcos.jpg">
 </p>
 
 ### Análisis
 Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita evidenciar la orientación de cada articulación y sus respectivos eslabones. 
 <p align="center">
-  <img align="center"; width="500" height="300" src="Fig/TablaDH.png">
+  <img align="center"; width="500"  src="Fig/TablaDH.png">
 </p>
 <p align="center">
-  <img align="center"; width="500" height="300" src="Fig/Robot.jpg">
+  <img align="center"; width="500"  src="Fig/Robot.jpg">
 </p>
 
 ### ROS
@@ -53,12 +53,12 @@ PhantomX.plot(q_deg,'notiles','noname','floorlevel',-1);
 ``` 
 En primer lugar se crea dos variables que contengan un arreglo, en este caso la primera es la posición objetivo en radianes que para iniciar se pone en HOME y la segunda contiene los valores de las articulaciones mostradas al inicio. Con esto realizado añaden los parametros de DH hallados previamente y con esto se crea el robot teniendo en cuenta que se configura una herramienta por medio del método .tool y su respectiva MTH. Por último como método de comprobación se grafica el robot en diferentes posiciones:
 <p align="center">
-  <img align="center"; width="250" height="300" src="Fig/Robot.jpg">
-  <img align="center"; width="250" height="300" src="Fig/Pos1.jpg">
-  <img align="center"; width="250" height="300" src="Fig/Pos2.jpg">
-  <img align="center"; width="250" height="300" src="Fig/Pos3.jpg">
-  <img align="center"; width="250" height="300" src="Fig/Pos4.jpg">
-  <img align="center"; width="250" height="300" src="Fig/Pos5.jpg">
+  <img align="center"; width="250"  src="Fig/Robot.jpg">
+  <img align="center"; width="250"  src="Fig/Pos1.jpg">
+  <img align="center"; width="250"  src="Fig/Pos2.jpg">
+  <img align="center"; width="250"  src="Fig/Pos3.jpg">
+  <img align="center"; width="250"  src="Fig/Pos4.jpg">
+  <img align="center"; width="250"  src="Fig/Pos5.jpg">
 </p>
 
 ### Conexión con Matlab
@@ -117,11 +117,11 @@ PhantomX.plot(q_rad,'notiles','noname','floorlevel',-1);
 ```
 Teniendo este código y asegurandose que la conexiones al robot esten habilitadas y en funcionamiento, se ingresan los parametros de entrada, en este caso se tiene la variable "q_deg" la cual guardará los valores de articulación que se deseen en grados, se aclara que se crea otro arreglo para realizar la convversión a radianes con el fin de ingresar los parámetros iniciales de la función plot. Siguiendo los pasos crea un for que permita recorrer cada  articulación y publicar el valor que se ingreso, al finalizar esta pasrte se agrega un delay que teniendo en cuenta las pruebas echas en ROS-Python si no afecta el torque de lo motores se pueden tener movimientos abruptos y oscilaciones que en conjunto podrian generar una resonancia llevando al robo a voltearse si no se tiene sujeto a la base. Solo restaría utilizar las herramientas del SerialLink para obtener la visualización en matlab.
 <p align="center">
-  <img align="center"; width="300" height="300" src="0_0_0_0.jpg">
-  <img align="center"; width="300" height="300" src="20_n20_20_n20.jpg">
-  <img align="center"; width="300" height="300" src="30_n30_30_n30.jpg">
-  <img align="center"; width="300" height="300" src="n90_15_n55_17.jpg">
-  <img align="center"; width="300" height="300" src="n90_45_n55_45.jpg">
+  <img align="center"; width="300" src="0_0_0_0.jpg">
+  <img align="center"; width="300" src="20_n20_20_n20.jpg">
+  <img align="center"; width="300" src="30_n30_30_n30.jpg">
+  <img align="center"; width="300" src="n90_15_n55_17.jpg">
+  <img align="center"; width="300" src="n90_45_n55_45.jpg">
   
 </p>
 Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente.
