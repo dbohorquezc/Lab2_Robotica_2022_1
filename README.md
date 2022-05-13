@@ -35,7 +35,15 @@ Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por
 
 ### ROS
 
-Para este punto,  se partio de realizar movimientos al robot por la consola para tener un primer acercamiento con el comportamiento de robot, y posteriormente si se procedio a ver controlar su movimiento desde un  Script de Python y RViz. A continuacion se explicará el codigo de python.
+Para este punto,  se partio de realizar movimientos al robot por la consola para tener un primer acercamiento con el comportamiento de robot, y posteriormente si se procedio a ver controlar su movimiento desde un  Script de Python y RViz.Cabe mencionar que para todos estros procesos es necesario chequear y habilitar el puerto que se haya activado al conectar el robot, esto se realiza con:
+```
+ls /dev/tty*
+sudo chmod 777 /dev/ttyUSB0
+```
+
+A continuacion se explicará el codigo de python.
+
+Se importaron las librerias 
 ```
 #!/usr/bin/env python3
 import rospy
@@ -46,6 +54,7 @@ import termios, sys, os
 from dynamixel_workbench_msgs.srv import DynamixelCommand
 ```
 
+Se define la funcion getkey, que permitte interactuar con el teclado dentro de la terminal de VScode donde se haya ejecutado el archivo.
 ```
 def getkey():
     fd = sys.stdin.fileno()
@@ -62,6 +71,7 @@ def getkey():
         termios.tcsetattr(fd, TERMIOS.TCSAFLUSH, old)
     return c
 ```
+Se define la funcion jointCommand, la cual incializa un nodo, y se crea la funcion para que permirta interactuar con los servicion de dynamixel, de forma que se entrega el comando, el ID de la articulacion, el addr_name, que tiene que ver con la accion que se va a realizar, el valor a cambiar o objetivo y el tiempo.
 
 ```
 def jointCommand(command, id_num, addr_name, value, time):
@@ -76,7 +86,7 @@ def jointCommand(command, id_num, addr_name, value, time):
     except rospy.ServiceException as exc:
         print(str(exc))
 ```
-
+La siguientes lineas de codigo son las que permiten entrelazar el mando por teclado y los servicios de dynamixel. por medio de un while(1), se ejecuta la accion indefinida mente hasta que se termine el proceso con la tecla 'b'.acá  se crea una variable i la cual representa la articulacion actual y siempre inicializa en uno, siendo *"waist"*,
 
 ```
 if __name__ == '__main__':
