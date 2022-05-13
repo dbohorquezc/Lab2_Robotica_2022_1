@@ -116,3 +116,11 @@ figure
 PhantomX.plot(q_rad,'notiles','noname','floorlevel',-1);
 ```
 Teniendo este código y asegurandose que la conexiones al robot esten habilitadas y en funcionamiento, se ingresan los parametros de entrada, en este caso se tiene la variable "q_deg" la cual guardará los valores de articulación que se deseen en grados, se aclara que se crea otro arreglo para realizar la convversión a radianes con el fin de ingresar los parámetros iniciales de la función plot. Siguiendo los pasos crea un for que permita recorrer cada  articulación y publicar el valor que se ingreso, al finalizar esta pasrte se agrega un delay que teniendo en cuenta las pruebas echas en ROS-Python si no afecta el torque de lo motores se pueden tener movimientos abruptos y oscilaciones que en conjunto podrian generar una resonancia llevando al robo a voltearse si no se tiene sujeto a la base. Solo restaría utilizar las herramientas del SerialLink para obtener la visualización en matlab.
+<p align="center">
+  <img align="center"; width="300" height="300" src="0_0_0_0.jpg">
+  <img align="center"; width="300" height="300" src="Fig/Robot.jpg">
+  <img align="center"; width="300" height="300" src="Fig/Robot.jpg">
+  <img align="center"; width="300" height="300" src="Fig/Robot.jpg">
+  <img align="center"; width="300" height="300" src="Fig/Robot.jpg">
+  
+</p>
