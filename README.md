@@ -20,8 +20,9 @@ Robótica</p1>
 ### Mediciones
 Por medio de un calibrador se obtienes la medidas con las cuales se realiza un diagrama para tener una idea basica de las juntas que presenta el robot (Imagen de la izquierda). Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama (Diagrama de la derecha) y su respectiva tabla.
 <p align="center">
-  <img align="center"; width="200"  src="Fig/Diagram.jpg">
+  <img align="center"; width="180"  src="Fig/Diagram.jpg">
   <img align="center"; width="200"  src="Fig/Marcos.jpg">
+  Figura 1.
 </p>
 
 ### Análisis
@@ -219,8 +220,7 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   <img align="center"; width="300" src="n90_45_n55_45.jpg">
   
 </p>
-Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente 
-[video](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
+Se ṕuede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente [video](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
 
 
 ### Conclusiones
