@@ -34,6 +34,11 @@ Obteniendo asi la siguiente tabla mostrada en el software de Matlab, el cual por
 </p>
 
 ### ROS
+
+Para este punto,  se partio de realizar movimientos al robot por la consola para tener un primer acercamiento con el comportamiento de robot, y posteriormente si se procedio a ver controlar su movimiento desde un  Script de Python y RViz. A continuacion se explicará el codigo de python.
+
+
+<p > <a href=" https://www.youtube.com/watch?v=S8tb4s8Rve8" target="_blank" > página. </a>   </p>
 ### Toolbox
 Como se mostro en el análsis la tabla obtenida se obtuvo por medio de la función SerialLink generando así el siguiente código.
 
