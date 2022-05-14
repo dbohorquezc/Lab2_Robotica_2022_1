@@ -36,7 +36,7 @@ Obteniendo así la siguiente tabla mostrada en el software de Matlab, el cual po
 <p align="center">
   <img align="center"; width="500"  src="Fig/Robot.jpg">
 </p>
-<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 3.Visualizacion Toolbox Peter C. del Phantom X </p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 3. Visualizacion Toolbox Peter C. del Phantom X </p>
 
 ### ROS
 
@@ -169,7 +169,7 @@ En primer lugar se crea dos variables que contengan un arreglo, en este caso la 
   <img align="center"; width="250"  src="Fig/Pos5.jpg">
 </p>
 
-<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 4.Posiciones de los robots en el modelo en MATLAB. </p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 4. Posiciones de los robots en el modelo en MATLAB. </p>
 
 ### Conexión con Matlab
 
@@ -235,7 +235,7 @@ Teniendo este código y asegurandose que la conexiones al robot esten habilitada
   
 </p>
 
-<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 5.Imagenes reales del movimiento del robot con el Script de MATLAB. </p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 5. Imagenes reales del movimiento del robot con el Script de MATLAB. </p>
 
 Se puede evidenciar cada una de las posiciones requeridas respetivamente. A continuacion se presenta el video de esta seccion de MARLAB en el siguiente [video](https://www.youtube.com/watch?v=xyX3RvM0UJ0).
 
