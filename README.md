@@ -20,19 +20,23 @@ Robótica</p1>
 ### Mediciones
 Por medio de un calibrador se obtienes las medidas con las cuales se realiza un diagrama para tener una idea básica de las juntas que presenta el robot (Imagen de la izquierda). Con este avance se procede a realizar el análisis de DHstd por medio de la ubicación de los marcos de referencia en el diagrama (Diagrama de la derecha) y su respectiva tabla.
 <p align="center">
-  <img align="center"; width="180"  src="Fig/Diagram.jpg">
+  <img align="center"; width="150"  src="Fig/Diagram.jpg">
   <img align="center"; width="200"  src="Fig/Marcos.jpg">
 </p>
-<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 1.</p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 1. Modelo geométrico DH *Phantom X Pincher* </p>
 
 ### Análisis
 Obteniendo así la siguiente tabla mostrada en el software de Matlab, el cual por medio de la librería de Peter Corke se representa un modelo del robot que permita evidenciar la orientación de cada articulación y sus respectivos eslabones.
 <p align="center">
   <img align="center"; width="500"  src="Fig/TablaDH.png">
 </p>
+
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 2. Tabla de parámetros DH *Phantom X Pincher* </p>
+
 <p align="center">
   <img align="center"; width="500"  src="Fig/Robot.jpg">
 </p>
+<p align="center"; style="font-size:50px; text-align:center; line-height : 30px; margin-top : 0; "> Figura 3.Visualizacion Toolbox PC del *Phantom X* </p>
 
 ### ROS
 
